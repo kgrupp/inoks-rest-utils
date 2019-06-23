@@ -1,0 +1,4 @@
+rootProject.name = 'nexus-utils'
+
+include ':unirest-utils'
+project(':unirest-utils').projectDir = file('../..')

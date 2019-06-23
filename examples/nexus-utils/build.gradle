@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version = project.hasProperty('injectedVersion') ? project.injectedVersion : "LOCAL-VERSION-SNAPSHOT"
+mainClassName = 'de.kgrupp.nexus.utils.NexusUtilsApplication'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':unirest-utils')
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.9'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.9'
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+
+    testCompile('junit:junit:4.12')
+}
