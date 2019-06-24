@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils.entity;
+package de.kgrupp.rest.utils.entity;
 
 public final class EntryBuilder {
 

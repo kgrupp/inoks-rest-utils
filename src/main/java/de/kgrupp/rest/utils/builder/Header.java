@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils.builder;
+package de.kgrupp.rest.utils.builder;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

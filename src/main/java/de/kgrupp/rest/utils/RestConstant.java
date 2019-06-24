@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils;
+package de.kgrupp.rest.utils;
 
 import org.apache.http.HttpStatus;
 

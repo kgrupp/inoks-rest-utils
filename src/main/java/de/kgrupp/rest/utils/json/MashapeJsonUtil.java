@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils.json;
+package de.kgrupp.rest.utils.json;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

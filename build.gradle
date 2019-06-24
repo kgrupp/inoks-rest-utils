@@ -17,7 +17,7 @@ plugins {
 }
 
 group = 'de.kgrupp'
-ext.moduleName = 'inoks.java.utils'
+ext.moduleName = 'inoks.rest.utils'
 version = project.hasProperty('injectedVersion') ? project.injectedVersion : 'LOCAL-VERSION-SNAPSHOT'
 
 sourceCompatibility = 11
@@ -35,6 +35,9 @@ dependencies {
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
+    testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.2'
 }
 
 compileJava {

@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils.callback;
+package de.kgrupp.rest.utils.callback;
 
 import com.mashape.unirest.http.HttpResponse;
 import de.kgrupp.monads.result.Result;

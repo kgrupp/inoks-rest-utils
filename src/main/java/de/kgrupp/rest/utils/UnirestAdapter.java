@@ -1,10 +1,10 @@
-package de.kgrupp.unirest.utils;
+package de.kgrupp.rest.utils;
 
 import com.mashape.unirest.http.Unirest;
 import de.kgrupp.monads.result.Result;
-import de.kgrupp.unirest.utils.builder.RestBuilder;
-import de.kgrupp.unirest.utils.callback.RestJsonCallback;
-import de.kgrupp.unirest.utils.exception.RestException;
+import de.kgrupp.rest.utils.builder.RestBuilder;
+import de.kgrupp.rest.utils.callback.RestJsonCallback;
+import de.kgrupp.rest.utils.exception.RestException;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 

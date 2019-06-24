@@ -3,13 +3,13 @@ package de.kgrupp.nexus.utils.api;
 import de.kgrupp.monads.result.Result;
 import de.kgrupp.nexus.utils.api.result.NexusComponent;
 import de.kgrupp.nexus.utils.api.result.NexusComponentResult;
-import de.kgrupp.unirest.utils.UnirestAdapter;
-import de.kgrupp.unirest.utils.builder.Method;
-import de.kgrupp.unirest.utils.builder.RestBuilder;
-import de.kgrupp.unirest.utils.callback.RestSimpleCallback;
-import de.kgrupp.unirest.utils.exception.RestException;
-import de.kgrupp.unirest.utils.model.Authorization;
-import de.kgrupp.unirest.utils.model.RestLoginData;
+import de.kgrupp.rest.utils.UnirestAdapter;
+import de.kgrupp.rest.utils.builder.Method;
+import de.kgrupp.rest.utils.builder.RestBuilder;
+import de.kgrupp.rest.utils.callback.RestSimpleCallback;
+import de.kgrupp.rest.utils.exception.RestException;
+import de.kgrupp.rest.utils.model.Authorization;
+import de.kgrupp.rest.utils.model.RestLoginData;
 
 import java.util.List;
 

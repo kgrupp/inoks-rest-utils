@@ -1,8 +1,8 @@
-package de.kgrupp.unirest.utils.model;
+package de.kgrupp.rest.utils.model;
 
 import de.kgrupp.monads.result.Result;
-import de.kgrupp.unirest.utils.RestConstant;
-import de.kgrupp.unirest.utils.builder.RestBuilder;
+import de.kgrupp.rest.utils.RestConstant;
+import de.kgrupp.rest.utils.builder.RestBuilder;
 
 import java.time.LocalDateTime;
 import java.util.logging.Logger;

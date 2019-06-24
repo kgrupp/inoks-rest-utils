@@ -1,6 +1,6 @@
 package de.kgrupp.nexus.utils.api;
 
-import de.kgrupp.unirest.utils.entity.EntryBuilder;
+import de.kgrupp.rest.utils.entity.EntryBuilder;
 
 public enum NexusEntity {
 

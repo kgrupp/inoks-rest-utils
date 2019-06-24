@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils.model;
+package de.kgrupp.rest.utils.model;
 
 /**
  * @author Konstantin

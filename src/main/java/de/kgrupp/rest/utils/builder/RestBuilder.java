@@ -1,4 +1,4 @@
-package de.kgrupp.unirest.utils.builder;
+package de.kgrupp.rest.utils.builder;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -10,10 +10,10 @@ import com.mashape.unirest.request.HttpRequestWithBody;
 import com.mashape.unirest.request.body.MultipartBody;
 import com.mashape.unirest.request.body.RequestBodyEntity;
 import de.kgrupp.monads.result.Result;
-import de.kgrupp.unirest.utils.RestConstant;
-import de.kgrupp.unirest.utils.callback.ARestCallback;
-import de.kgrupp.unirest.utils.callback.RestJsonCallback;
-import de.kgrupp.unirest.utils.exception.RestException;
+import de.kgrupp.rest.utils.RestConstant;
+import de.kgrupp.rest.utils.callback.ARestCallback;
+import de.kgrupp.rest.utils.callback.RestJsonCallback;
+import de.kgrupp.rest.utils.exception.RestException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
