@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':unirest-utils')
+    implementation project(':inoks-rest-utils')
 
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.9'
     implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.9'
@@ -19,5 +19,5 @@ dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
 
-    testCompile('junit:junit:4.12')
+    testImplementation('junit:junit:4.12')
 }

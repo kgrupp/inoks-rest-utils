@@ -1,4 +1,4 @@
 rootProject.name = 'nexus-utils'
 
-include ':unirest-utils'
-project(':unirest-utils').projectDir = file('../..')
+include ':inoks-rest-utils'
+project(':inoks-rest-utils').projectDir = file('../..')

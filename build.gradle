@@ -1,12 +1,32 @@
-plugins {
-    id 'java'
-    id 'application'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2'
+    }
 }
 
-version = project.hasProperty('injectedVersion') ? project.injectedVersion : "LOCAL-VERSION-SNAPSHOT"
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.sonarqube' version '2.6.2'
+    id 'com.bmuschko.nexus' version '2.3.1'
+    id 'com.github.kt3k.coveralls' version '2.8.2'
+}
+
+group = 'de.kgrupp'
+ext.moduleName = 'inoks.java.utils'
+version = project.hasProperty('injectedVersion') ? project.injectedVersion : 'LOCAL-VERSION-SNAPSHOT'
+
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/groups/public'
+    }
 }
 
 dependencies {
@@ -15,4 +35,93 @@ dependencies {
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+}
+
+compileJava {
+    inputs.property('moduleName', moduleName)
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath
+        ]
+        classpath = files()
+    }
+}
+
+javadoc {
+    options.addStringOption('-module-path', classpath.asPath)
+}
+
+allprojects {
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    tasks.withType(Test) {
+        systemProperty "file.encoding", "UTF-8"
+    }
+}
+
+test {
+    useJUnitPlatform()
+
+    filter {
+        exclude '**/module-info.class'
+    }
+}
+
+sonarqube {
+    properties {
+        property 'sonar.projectKey', 'inoks-rest-utils'
+        property 'sonar.projectName', 'inoks-rest-utils'
+    }
+}
+
+modifyPom {
+    project {
+        name 'inoks-rest-utils'
+        description 'Allows easy usage of a rest api based on the inoks-java-utils.'
+        url 'https://github.com/kgrupp/inoks-rest-utils'
+        inceptionYear '2019'
+
+        scm {
+            url 'https://github.com/kgrupp/inoks-rest-utils'
+            connection 'scm:https://kgrupp@github.com/kgrupp/inoks-rest-utils.git'
+            developerConnection 'scm:git://github.com/kgrupp/inoks-rest-utils.git'
+        }
+
+        licenses {
+            license {
+                name 'MIT License'
+                url 'https://github.com/kgrupp/inoks-rest-utils/blob/master/LICENSE'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'kgrupp'
+                name 'Konstantin Grupp'
+                email 'coding@konstantin-grupp.de'
+            }
+        }
+    }
+}
+
+extraArchive {
+    sources = true
+    tests = true
+    javadoc = true
+}
+
+nexus {
+    sign = true
+    repositoryUrl = project.hasProperty('nexusUrlRelease') ? nexusUrlRelease : 'http://localhost:8081/repository/maven-releases/'
+    snapshotRepositoryUrl = project.hasProperty('nexusUrlSnapshot') ? nexusUrlSnapshot : 'http://localhost:8081/repository/maven-snapshots'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
 }
