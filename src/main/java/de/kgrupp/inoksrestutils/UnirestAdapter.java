@@ -11,6 +11,7 @@ import org.apache.http.impl.nio.client.HttpAsyncClients;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -66,6 +67,9 @@ public final class UnirestAdapter implements AutoCloseable {
 
             @Override
             public Result<List<T>> next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
                 isInitial = false;
                 if (lastItem != null) {
                     applyParameters.accept(lastItem);
