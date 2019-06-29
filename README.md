@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/kgrupp/inoks-rest-utils.svg?branch=master)](https://travis-ci.org/kgrupp/inoks-rest-utils)
-[![Coverage Status](https://coveralls.io/repos/github/kgrupp/inoks-rest-utils/badge.svg?branch=master)](https://coveralls.io/github/kgrupp/inoks-rest-utils?branch=master)
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=inoks-rest-utils&metric=alert_status)](https://sonarcloud.io/dashboard?id=inoks-rest-utils)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=kgrupp_inoks-rest-utils&metric=alert_status)](https://sonarcloud.io/dashboard?id=kgrupp_inoks-rest-utils)
 [![Maven Central](https://img.shields.io/maven-central/v/de.kgrupp/inoks-rest-utils.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22de.kgrupp%22%20AND%20a:%22inoks-rest-utils%22)
 [![Javadocs](http://www.javadoc.io/badge/de.kgrupp/inoks-rest-utils.svg)](http://www.javadoc.io/doc/de.kgrupp/inoks-rest-utils)
 
