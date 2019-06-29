@@ -1,11 +1,11 @@
 package de.kgrupp.nexus.utils;
 
+import de.kgrupp.inoksrestutils.model.Authorization;
+import de.kgrupp.inoksrestutils.model.BasicAuthorization;
+import de.kgrupp.inoksrestutils.model.RestLoginData;
 import de.kgrupp.monads.result.Result;
 import de.kgrupp.nexus.utils.api.NexusRestAdapter;
 import de.kgrupp.nexus.utils.api.result.NexusComponent;
-import de.kgrupp.rest.utils.model.Authorization;
-import de.kgrupp.rest.utils.model.BasicAuthorization;
-import de.kgrupp.rest.utils.model.RestLoginData;
 
 import java.util.List;
 import java.util.function.Consumer;

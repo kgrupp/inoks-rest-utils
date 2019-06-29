@@ -1,4 +1,4 @@
-package de.kgrupp.rest.utils.exception;
+package de.kgrupp.inoksrestutils.exception;
 
 public class RestException extends RuntimeException {
     public RestException(String message) {

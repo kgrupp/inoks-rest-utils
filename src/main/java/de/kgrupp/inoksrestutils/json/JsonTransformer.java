@@ -1,4 +1,4 @@
-package de.kgrupp.rest.utils.json;
+package de.kgrupp.inoksrestutils.json;
 
 import org.json.JSONObject;
 

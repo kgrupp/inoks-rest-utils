@@ -1,7 +1,7 @@
-package de.kgrupp.rest.utils.model;
+package de.kgrupp.inoksrestutils.model;
 
+import de.kgrupp.inoksrestutils.builder.RestBuilder;
 import de.kgrupp.monads.result.Result;
-import de.kgrupp.rest.utils.builder.RestBuilder;
 
 public interface Authorization {
     boolean isBasic();

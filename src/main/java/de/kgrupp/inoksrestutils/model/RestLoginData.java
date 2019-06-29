@@ -1,4 +1,4 @@
-package de.kgrupp.rest.utils.model;
+package de.kgrupp.inoksrestutils.model;
 
 /**
  * @author Konstantin

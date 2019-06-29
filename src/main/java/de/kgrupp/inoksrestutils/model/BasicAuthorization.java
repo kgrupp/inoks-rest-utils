@@ -1,8 +1,8 @@
-package de.kgrupp.rest.utils.model;
+package de.kgrupp.inoksrestutils.model;
 
+import de.kgrupp.inoksrestutils.RestConstant;
+import de.kgrupp.inoksrestutils.builder.RestBuilder;
 import de.kgrupp.monads.result.Result;
-import de.kgrupp.rest.utils.RestConstant;
-import de.kgrupp.rest.utils.builder.RestBuilder;
 
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
