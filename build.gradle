@@ -74,7 +74,7 @@ test {
 
 sonarqube {
     properties {
-        property 'sonar.projectKey', 'inoks-rest-utils'
+        property 'sonar.projectKey', 'kgrupp_inoks-rest-utils'
         property 'sonar.projectName', 'inoks-rest-utils'
     }
 }
