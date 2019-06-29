@@ -1,16 +1,13 @@
 language: java
 jdk:
   - openjdk11
-
 addons:
   sonarcloud:
-    organization: "kgrupp-github"
+    organization: kgrupp-github
     token:
-      secure: "ISJYrFbOKiBZZ05UkVkKG964ZdcFa+wZKyaCluGM9crsE5a9ni+uYBzyvvw3kvDX1W1qOFx0ytWf2+bvuDcrTcQWZ4MzPbuYsdz/iuocQARxcmcfat1t8EBAsweNDMe97pW4aYZ91vbiV77PUies+/CzwGF4aWaO5WccDfXD3dvtSUxOInDFTyyvukk08QOW0667jFajTfuInVjQ2fVBQdCdsUaun2J6wGfWQbkaeYYYa6PJXMX6weiakmoCZMR8ml9cWvHqgXG1r+RNrIlCArMxzKG7ZcWaeZLDfGhMQlJJ2v3NefVjGuDyeVWwJ6a65L8IdERYAvIb/sacnocS+AyFGmwVPoMBz7n3Rl+/T/R36CS2aUT7JjRJGiHq2XxjDlZVSe4ub7FY6lUVctw/22I4KT+NfupYgcq6WmfEgsJ0Rwad7H+3c1EeSHHDNW/jUNmY0HwcKekBNdxgSA1Nq90Rmk4bEdXG9maWdez5BBQcu6BCBrtHxFthbbmhwZ2qi9KM0KG19wsVQezmf5gGcHS9K+GUXd+QwN5rhUONZqvmIw4N/zIl5+nyW+I8xsHkymoHNZJyI/JKcTySYxx1RsFTa+FN6cb8wq9HnBsgommVlcBx5I8vVdcgi8i3gFvmm55j3ZnF3rSfeYtynZU8C2csyXoJKr3hLOfQcELVYos="
-
+      secure: IRMpr31MMqHWfCpUPjVruV71OmhzdMrUEmFplBEqc96LgRoRtpy08hesdu35SzUVODiaG+7NLMAHFWaKLrNO7T5iAIQit4O8aEaLCobOlmR/cbgb6D44BlGcHUsrVYk7byTPVo8WQNECR8v8o4Jev0P68J0VP23VOoYkGrGNnvBACrIMBTJhTTufIMrq6n4Mw+kapOAQSQOZcgOIOhKXxEeCgV7j66fHXgPHEoFNKqcv4gsrG8s1DAE2zVdb3RSgyWQVY64JEPlJXK6G9oPyq8LLMi75NKc7EqxuroYHv/NzJIuCz7U+vKL6te+VIRSANopTu+BtX7sogT3dF4nEy2cqADOrfzf5P3JHP3mjH/8/eMp7DDUMBCHUahco6+1nDS9tAcw5mnxrC5mNbcCjaK2l4dXumx0AEeG/Ne6yfx/issP9D9XIiyCd2TxS/FjDO8pY72NgELSZGZWuop9mo4YmsI+ZgltAZNsberu/Ly6vYA1Ft2/tL/+7J+xOiRn5BrPDdpFxgTsQ/GBi956OwAWN8IbIEbbAc5hrWyy5cVNM73L3uD6u2F7eNyzVcAj1eQZCtKU+NufTAugP73EDj416pYn4niw2nwv8WgP5aY3pzpTDbI80VG+dK0+9hHitDGHlKL01U/X+iW+MIn1KNtw5ajZ2Hb8cK0IQ6Go8KAY=
 before_install:
   - chmod +x gradlew
-
 after_success:
-  - ./gradlew jacocoTestReport coveralls
-  - ./gradlew sonarqube
+  - "./gradlew jacocoTestReport coveralls"
+  - "./gradlew sonarqube"
