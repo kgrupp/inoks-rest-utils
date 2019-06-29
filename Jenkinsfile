@@ -11,7 +11,7 @@ node {
         stage('Build') {
             echo "My branch is: ${env.BRANCH_NAME}"
             withSonarQubeEnv('localhostSonarQube') {
-                bat "gradlew.bat --info clean build sonarqube -DinjectedVersion=${version}"
+                bat "gradlew.bat --info clean build sonarqube -PinjectedVersion=${version}"
             }
             currentBuild.description = version
         }
@@ -21,12 +21,12 @@ node {
                 def fileContent = readFile gradleProperties
                 writeFile file: 'gradle.properties', text: fileContent
                 withCredentials([usernamePassword(credentialsId: 'nexus', passwordVariable: 'nexusPassword', usernameVariable: 'nexusUsername')]) {
-                    bat "gradlew.bat --info upload -DinjectedVersion=${version} -PnexusUsername=${nexusUsername} -PnexusPassword=${nexusPassword}"
+                    bat "gradlew.bat --info upload -PinjectedVersion=${version} -PnexusUsername=${nexusUsername} -PnexusPassword=${nexusPassword}"
                 }
                 withCredentials([usernamePassword(credentialsId: 'oss.sonartype.org', passwordVariable: 'nexusPassword', usernameVariable: 'nexusUsername')]) {
                     def nexusUrlRelease = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
                     def nexusUrlSnapshot = "https://oss.sonatype.org/content/repositories/snapshots"
-                    bat "gradlew.bat --info upload -DinjectedVersion=${version} -PnexusUsername=${nexusUsername} -PnexusPassword=${nexusPassword} -PnexusUrlRelease=${nexusUrlRelease} -PnexusUrlSnapshot=${nexusUrlSnapshot}"
+                    bat "gradlew.bat --info upload -PinjectedVersion=${version} -PnexusUsername=${nexusUsername} -PnexusPassword=${nexusPassword} -PnexusUrlRelease=${nexusUrlRelease} -PnexusUrlSnapshot=${nexusUrlSnapshot}"
                 }
             }
         }
